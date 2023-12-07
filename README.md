@@ -9,7 +9,7 @@ This project focuses on predicting injuries in competitive runners using Bayesia
 - **Source**: The dataset includes sample from 74 runners (27 women, 47 men) with an average team tenure of 3.7 years. Athletes compete at national and international levels .
 
 - **Ethics**: The study adheres to the Declaration of Helsinki, and ethical approval was obtained.
-- **Data Structure**: Two datasets are available, one with daily data (`day_approach_maskedID_timeseries.csv`) and another with weekly aggregated data (`week_approach_maskedID_timeseries.csv`).
+- **Data Structure**: Two datasets are available, one with daily data (`day_approach_maskedID_timeseries.csv`) and another with weekly aggregated data (`week_approach_maskedID_timeseries.csv`). For our analysis, we chose to focus on using the weekly data.
 
 ## Variables
 
