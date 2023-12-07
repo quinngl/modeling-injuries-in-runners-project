@@ -1,5 +1,7 @@
 # Injury Prediction in Competitive Runners 
 
+### DS 6040 - Fall 2023 <br> Stephanie Fissel, Jackie Fraley, Quinn Glovier
+
 ## Overview
 
 This project focuses on predicting injuries in competitive runners using Bayesian Machine Learnung techniques. This dataset consists of detailed training logs from a Dutch high-level running team spanning seven years (2012-2019), including middle and long-distance runners (800 meters to marathon). The goal is to analyze training parameters and subjective assessments to predict and prevent injuries. 
@@ -38,6 +40,7 @@ A Bayesian beta-binomial model was developed to predict injuries. The model incl
 ```python
 # Exmple code for model development
 ```
+## Variational Approximation Model wth ADVI
 
 ## Results and interpretation
 
