@@ -40,7 +40,7 @@ A Bayesian beta-binomial model was developed to predict injuries. The model incl
 ```python
 # Exmple code for model development
 ```
-## Variational Approximation Model wth ADVI
+### Variational Approximation Model wth ADVI
 
 ## Results and interpretation
 
