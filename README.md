@@ -1,4 +1,4 @@
-# Injury Prediction in Competitive Runners 
+# Modeling and Understanding Injuries in Competitive Runners 
 
 ### DS 6040 - Fall 2023 <br> Stephanie Fissel, Jackie Fraley, Quinn Glovier
 
