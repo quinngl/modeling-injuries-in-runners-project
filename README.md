@@ -89,5 +89,9 @@ with pm.Model() as glm:
 - Lessons: Creating model parameters involves many trials and errors
 - Drawbacks: Our Posterior Predictive Check and ELBO Plots have major room for improvement
 
+### Future Steps
+- Time Series: Examining the influence of injury data from x weeks before an event
+- Further Training: Improving our model performance with more available data
+- Prediction: Predicting with a test set if we had more data
 
 This project is licensed under the MIT License. 
