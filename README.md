@@ -4,7 +4,7 @@
 
 ## Overview
 
-This project focuses on predicting injuries in competitive runners using Bayesian Machine Learnung techniques. This dataset consists of detailed training logs from a Dutch high-level running team spanning seven years (2012-2019), including middle and long-distance runners (800 meters to marathon). The goal is to analyze training parameters and subjective assessments to predict and prevent injuries. 
+This project focuses on modeling and understanding injuries in competitive runners using Bayesian Machine Learning techniques. This dataset consists of detailed training logs from a Dutch high-level running team spanning seven years (2012-2019), including middle and long-distance runners (800 meters to marathon). The goal is to analyze training parameters and subjective assessments to predict and prevent injuries. 
 
 ## Dataset Descriptuon
 
@@ -35,7 +35,7 @@ This project focuses on predicting injuries in competitive runners using Bayesia
 
 ### Beta-Binomial Model
 
-A Bayesian Beta-Binomial model was developed to predict injuries. 
+A Bayesian Beta-Binomial model was developed to analyze injuries. 
 The reduced model's predictors include:
 - `max_km_oneday`: Maximum kilometers completed in a single day.
 - `total_kmZ5`: Total kilometers covered in Z5-T1-T2.
