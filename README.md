@@ -50,10 +50,8 @@ with pm.Model() as glm:
     β3 = pm.Beta('β3', alpha = 1, beta = 1) #average exertion
     μ =  α + β1 * X[:,0] + β2 * X[:,1] + β3 * X[:,2]
     p = pm.Deterministic("p", pm.invlogit(μ))
-    y_hat = pm.Binomial('y_hat', n = 1, p = p, observed = y) 
+    y_hat = pm.Binomial('y_hat', n = 1, p = p, observed = y)
 ```
-## Evaluation
-
 ### HMC Sampling
 #### General Information:
 - Better for smaller data sets
@@ -77,6 +75,24 @@ with pm.Model() as glm:
 - 10,000 iterations
 - 1,000 samples
 - Average loss: 723.15
+
+## Evaluation
+### HMC Sampling
+- trace plot
+- prior predictive check
+- WAIC and LOO
+- posterior predictive check
+- forest plot
+- posterior parameter plots
+- 95% HDI plot
+- trace summary
+### ADVI
+- ELBO plot
+- trace plot
+- forest plot
+- posterior parameter plots
+- 95% HDI plot
+- trace summary
 
 ## Conclusions
 ### Takeaways for Athletes
