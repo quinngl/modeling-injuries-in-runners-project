@@ -15,7 +15,7 @@ This project focuses on predicting injuries in competitive runners using Bayesia
 
 ## Variables
 
-### Predictor Variables
+### Initial Predictor Variables
 
 - `n_sessions`: Total number of sessions completed.
 - `n_restdays`: Number of days without training.
@@ -27,7 +27,7 @@ This project focuses on predicting injuries in competitive runners using Bayesia
 - `avg_exertion`: Average rating of exertion.
 - `avg_recovery`: Average rating of how well-rested the athlete felt.
 
-### Responses Variable
+### Response Variable
 
 - `injury`: Binary column indicating whether the training setup resulted in an injury (1) or not (0)
 
@@ -35,24 +35,59 @@ This project focuses on predicting injuries in competitive runners using Bayesia
 
 ### Beta-Binomial Model
 
-A Bayesian beta-binomial model was developed to predict injuries. The model includes predictors such as the number of sessions, rest days, total kilometers, and subjective assessments. 
+A Bayesian Beta-Binomial model was developed to predict injuries. 
+The reduced model's predictors include:
+- `max_km_oneday`: Maximum kilometers completed in a single day.
+- `total_kmZ5`: Total kilometers covered in Z5-T1-T2.
+- `avg_exertion`: Average rating of exertion.
 
 ```python
-# Exmple code for model development
+with pm.Model() as glm:
+    
+    α = pm.Beta('α', alpha = 1, beta = 1) #intercept
+    β1 = pm.Beta('β1', alpha = 1, beta = 1) #max kilometers in one day
+    β2 = pm.Beta('β2', alpha = 1, beta = 1) #total kilometers ran with anaerobic heart rate
+    β3 = pm.Beta('β3', alpha = 1, beta = 1) #average exertion
+    μ =  α + β1 * X[:,0] + β2 * X[:,1] + β3 * X[:,2]
+    p = pm.Deterministic("p", pm.invlogit(μ))
+    y_hat = pm.Binomial('y_hat', n = 1, p = p, observed = y) 
 ```
-### Variational Approximation Model wth ADVI
+## Evaluation
 
-## Results and interpretation
+### HMC Sampling
+#### General Information:
+- Better for smaller data sets
+- Slower
+- More accurate (will give exact values)
 
+#### Our Parameters:
+- 1000 draw iterations
+- 2000 tuning points
+- Took 3 seconds total
+- 4 cores
 
-## Conclusion
+### ADVI Approximation
+#### General Information:
+- Better for large datasets
+- Can only approximate
+- May not converge
 
+#### Our Parameters:
+- Used pm.fit()
+- 10,000 iterations
+- 1,000 samples
+- Average loss: 723.15
 
+## Conclusions
+### Takeaways for Athletes
+- Average exertion: The further an athlete pushes beyond their limits, the greater the likelihood of injury
+- Injuries: The pursuit of peak performance often walks hand in hand with the risk of injury as athletes push their boundaries
+- Take care of your body: Attending to your body and embracing recovery not only prevents injury but also enhances performance 
 
-
-
-
-
+### Takeaways from Modeling
+- Victories: The model converged with sampling
+- Lessons: Creating model parameters involves many trials and errors
+- Drawbacks: Our Posterior Predictive Check and ELBO Plots have major room for improvement
 
 
 This project is licensed under the MIT License. 
